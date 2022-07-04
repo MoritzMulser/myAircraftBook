@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\Moritz\anaconda3\lib\asyncio\base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Moritz\anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import tensorflow as tf
+import keras_tuner as kt
+from keras_tuner.tuners import RandomSearch
+from keras_tuner.engine.hyperparameters import HyperParameters
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Activation
+from tensorboard import notebook
+from tensorboard.plugins.hparams import api as hp
+from tensorflow.keras.utils import to_categorical
+from keras.preprocessing.image import img_to_array
+from keras.applications.vgg16 import preprocess_input
+
+import time
+import datetime
+
+LOG_DIR = f"{int(time.time())}"
+
+import pandas as pd
+import os
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+from numpy import expand_dims
+
+import shap
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mImportError[0m                               Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp/ipykernel_9920/4178518042.py[0m in [0;36m<module>[1;34m[0m
+[0;32m      9[0m [1;32mfrom[0m [0mtensorboard[0m[1;33m.[0m[0mplugins[0m[1;33m.[0m[0mhparams[0m [1;32mimport[0m [0mapi[0m [1;32mas[0m [0mhp[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     10[0m [1;32mfrom[0m [0mtensorflow[0m[1;33m.[0m[0mkeras[0m[1;33m.[0m[0mutils[0m [1;32mimport[0m [0mto_categorical[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 11[1;33m [1;32mfrom[0m [0mkeras[0m[1;33m.[0m[0mpreprocessing[0m[1;33m.[0m[0mimage[0m [1;32mimport[0m [0mimg_to_array[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     12[0m [1;32mfrom[0m [0mkeras[0m[1;33m.[0m[0mapplications[0m[1;33m.[0m[0mvgg16[0m [1;32mimport[0m [0mpreprocess_input[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     13[0m [1;33m[0m[0m
+
+[1;31mImportError[0m: cannot import name 'img_to_array' from 'keras.preprocessing.image' (C:\Users\Moritz\anaconda3\lib\site-packages\keras\preprocessing\image.py)
+ImportError: cannot import name 'img_to_array' from 'keras.preprocessing.image' (C:\Users\Moritz\anaconda3\lib\site-packages\keras\preprocessing\image.py)
+
